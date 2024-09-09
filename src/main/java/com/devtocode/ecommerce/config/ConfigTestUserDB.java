@@ -58,6 +58,16 @@ public class ConfigTestUserDB implements CommandLineRunner {
 		CategoryRepository.saveAll(Arrays.asList(category1, category2, category3));
 		ProductRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
 		
+		
+		
+		p1.getCategories().add(category1);
+		p2.getCategories().add(category2);
+		p3.getCategories().add(category2);
+		p4.getCategories().add(category3);
+		p5.getCategories().add(category3);
+		
+		ProductRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
+		
 		// Instanciando os usuários
 		User u1 = new User(null, "Luis Soares", "luissoares@outlook.com", "71983673280","casa123");
 		User u2= new User(null, "Gerson Coelho", "gerson_coelho@live.com", "71987749903","casa12345");
