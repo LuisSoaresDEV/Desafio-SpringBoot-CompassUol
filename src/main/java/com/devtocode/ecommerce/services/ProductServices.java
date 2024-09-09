@@ -32,6 +32,12 @@ public class ProductServices {
 		return obj.get();
 		
 	}
+
+
+	public Product insert(Product obj) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

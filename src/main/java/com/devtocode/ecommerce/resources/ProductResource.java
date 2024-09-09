@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.devtocode.ecommerce.entities.Product;
+import com.devtocode.ecommerce.entities.User;
 import com.devtocode.ecommerce.services.ProductServices;
 
 @RestController
