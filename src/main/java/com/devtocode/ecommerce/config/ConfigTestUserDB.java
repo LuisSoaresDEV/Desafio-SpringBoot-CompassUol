@@ -10,10 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 import com.devtocode.ecommerce.entities.Category;
 import com.devtocode.ecommerce.entities.Order;
+import com.devtocode.ecommerce.entities.Product;
 import com.devtocode.ecommerce.entities.User;
 import com.devtocode.ecommerce.entities.enums.OrderStatus;
 import com.devtocode.ecommerce.repositories.CategoryRepository;
 import com.devtocode.ecommerce.repositories.OrderRepository;
+import com.devtocode.ecommerce.repositories.ProductRepository;
 import com.devtocode.ecommerce.repositories.UserRepository;
 
 @Configuration
@@ -31,6 +33,9 @@ public class ConfigTestUserDB implements CommandLineRunner {
 	@Autowired
 	private CategoryRepository CategoryRepository;
 	
+	@Autowired
+	private ProductRepository ProductRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 		
@@ -42,11 +47,16 @@ public class ConfigTestUserDB implements CommandLineRunner {
 		Category category2 = new Category(null, "Electronics");
 		Category category3 = new Category(null, "Tools");
 		
+		
+		//instanciando os produtos
+		Product p1 = new Product(null, "Galaxy Pro Max 5G", "High-capacity portable charger with two USB ports,", 999.99,"");
+		Product p2 = new Product(null, "AlphaSound Wireless Earbuds", "Premium Bluetooth earbuds with noise cancellation, 20-hour battery life, and IPX5 water resistance. Ideal for on-the-go listening.", 149.99, "");
+		Product p3 = new Product(null, "XtremePower Portable Power Bank", "High-capacity portable charger with two USB ports, capable of charging smartphones, tablets, and laptops. Compact and lightweight.", 59.99, "");
+		Product p4 = new Product(null, "PrecisionPro Cordless Drill 18V", "A powerful cordless drill with 18V motor, variable speed, and a built-in LED light for precision work. Includes two rechargeable batteries.", 1200.0, "");
+		Product p5 = new Product(null, "MasterGrip 52-Piece Tool Set", "Comprehensive tool set with high-quality wrenches, screwdrivers, and pliers. Perfect for both home repairs and professional use.", 89.99, ""); 
+
 		CategoryRepository.saveAll(Arrays.asList(category1, category2, category3));
-		
-		
-		
-		
+		ProductRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
 		
 		// Instanciando os usuários
 		User u1 = new User(null, "Luis Soares", "luissoares@outlook.com", "71983673280","casa123");
